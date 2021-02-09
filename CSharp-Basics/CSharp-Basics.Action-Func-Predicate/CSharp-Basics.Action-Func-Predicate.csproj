@@ -3,7 +3,7 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <RootNamespace>CSharp_Basics.Predicate</RootNamespace>
+        <RootNamespace>CSharp_Basics.Action_Func_Predicate</RootNamespace>
     </PropertyGroup>
 
 </Project>
