@@ -3,7 +3,7 @@
 ## Indexer
 Indexers bir nesnenin dizi gibi indekslenmesini sağlar. Tıpkı bir array tanımladığımız da bu array içinde hangi indeksteki elemanı görmek istiyorsak çağırdığımız gibi, indexer'lar da Class'ımızın bir array gibi olmasını sağlamaktadır.
 
-```` c-sharp
+``` c-sharp
 public class Person  
 {  
     private string[] persons = {"John Doe","Jon Snow","Tryion Lannister"};  
@@ -16,16 +16,16 @@ public class Person
     }  
 }
 
-````
+```
 Bu örnekte bir Person sınıfı oluşturduk ve içinde string dizisinde bir persons array'i tanımladık. 
-```` c-sharp
+``` c-sharp
 static void Main(string[] args)  
 {  
     Person p = new Person();  
     var firtPerson = p[0];  
     Console.WriteLine(firtPerson);  
 }
-````
+```
 Person nesnesinin bir array gibi kullanıp verdiğimiz index'deki değeri getirtmiş olduk.
 
 ## Değer ve Referans Tipleri
@@ -37,7 +37,7 @@ Değer Tipleri stack bölgesinde tutulurken, Referans Tipleri heap bölgesinde t
 
 Bir metod içerisinde oluşturulan değişkenler ve metod parametreleri stack bellek bölgesinde oluşturulur ve metod sonlandığında bellekten silinirler.Bir metoda yolladığımız değer tipinde ki parametreler üzerinde ne kadar işlem yaparsak yapalım değerleri değişmez.Örnek verecek olursam:
 
-```` c-sharp
+``` c-sharp
  static void Main(string[] args)  
     {  
         int toplam = 0;  
@@ -50,11 +50,11 @@ Bir metod içerisinde oluşturulan değişkenler ve metod parametreleri stack be
         toplam += a;  
     }   
 }
-````
+```
 
 Bu kodun çıktısı 0 olacaktır.Çünkü toplam değişkleni bir değer değişkenidir ve metoda parametre olarak sadece değeri gönderilir.
 
-```` c-sharp
+``` c-sharp
 static void Main(string[] args)  
 {  
     int toplam = 0;  
@@ -65,14 +65,14 @@ public static void AddWithRef(int a, ref int toplam)
 {  
     toplam += a;  
 }
-````
+```
 
 **ref** anahtar kelimesiyle değer tipininin referansını parametre olarak yolladık ve bu sayede gerçekten değerini değiştirmiş olduk.
 
 ## Delegate
 C#'da delegate(Temsilci),tanımlanan metodların bellekteki adreslerini tutan temsilcilerdir.C++'daki fonksiyon göstericilerine benzerler.
 
-````c-sharp
+```c-sharp
 delegate void NumberDelegate(int a,int b);
 public static void Main(string[] args)  
 {  
@@ -96,7 +96,7 @@ public static void Multiply(int a,int b)
     Console.WriteLine($"{a} * {b} = {a*b}");  
   
 }
-````
+```
 
 Delegate olarak tanımladığımız yapı,bir fonksiyonu işaret etmelidir.İşaret edilen fonksiyonu  delegateMethod(a,b) ya da delegateMethod.Invoke(a,b) kullanılarak çağırılır.
 
@@ -104,7 +104,7 @@ Delegate olarak tanımladığımız yapı,bir fonksiyonu işaret etmelidir.İşa
 C#'da  Action dönüş tipi olmayan (void), Func dönüş tipi generic olan, Predicate ise dönüş tipi bool olan özel delege yapılarıdır. 16'ya kadar parametre alabilirler.
 
 ### Action
-````c-sharp
+```c-sharp
 static void Main(string[] args)  
 {  
     Action<string, string> act = PrintFullName;  
@@ -115,11 +115,11 @@ static void PrintFullName(string firstName,string lastName)
 {  
     Console.WriteLine($"{firstName} {lastName}");  
 }
-````
+```
 Action'un işaret ettiği fonksiyon string tipinde iki tane parametre alıyor.Bu yüzden Action'u Action<string,string> şeklinde tanımladık.
 
 ### Func
-````c-sharp
+```c-sharp
 static void Main(string[] args)  
 {   
     Func<string,string> func = ReplaceSpaces;  
@@ -130,11 +130,11 @@ static string ReplaceSpaces(string str)
 {  
     return str.Replace(" ", "");  
 }
-````  
+``` 
 Func tipindeki delegate'ler değer döndüren fonksiyonlar için kullanılır.Bu örnekte delegate'imizi Func<string,string> şeklinde tanımladır.İlk string,işaret ettiğimiz metodunun paremetresi,ikinci string ise işaret ettiğimiz metodun dönüş tipidir.
 
 ### Predicate
-````c-sharp
+```c-sharp
 static void Main(string[] args)  
 {  
     Predicate<string> isUpper = IsUpperCase;  
@@ -145,7 +145,7 @@ static bool IsUpperCase(string str)
 {  
     return str.Equals(str.ToUpper());  
 }
-```` 
+````
 Predicate tipindeki delegate'ler,boolean tipinde değer döndüren fonksiyonlar için kullanılır.Örnekte bir stringin tüm harfleri büyük mü değil mi kontrolünü yapan IsUpperCase metodumuz var.Predicate<string> delegate'i ile metodumuzu işaret ediyoruz ve çalıştırıyoruz.İşaret ettiğimiz metod sadece bir tane string parametresi aldığı için Predicate'i tanımlarken 1 tane string ibaresi yazdık.
 
 > Func'da dönüş tipi bilinmediğinden dönüş tipinide belirtmemiz gerekiyordu fakat Predicate'de dönüş tipi bool olduğundan dönüş tipini berlitmemize gerek yok.
@@ -153,7 +153,7 @@ Predicate tipindeki delegate'ler,boolean tipinde değer döndüren fonksiyonlar 
 ## Dynamic
 C#'da bildiğimiz üzere object tipinde tanımladığımız değişkenlere her tipte değeri atayabiliriz.Object tipindeki değişkenlerin değerleri derleme zamanında atanır.
 
-````c-sharp
+```c-sharp
 static void Main(string[] args)  
 {  
     object a = 10;  
@@ -162,12 +162,12 @@ static void Main(string[] args)
     //Aşağıdaki kod hata verir  
     // a = a + 5;
     }
-````
+```
 Bu kodun çıktısı System.Int32 olur fakat hala derleyici a değişkeninin tipini object olarak biliyor.O yüzden a = a + 5 işlemi hata verir.
 
 Bu gibi durumlarda değişkenin tipini çalışma zamanında atamak için **dynamic** tipini kullanırız.
 
-```` c-sharp
+``` c-sharp
 static void Main(string[] args)  
 {  
     dynamic b = 10;  
@@ -175,14 +175,14 @@ static void Main(string[] args)
     b = b + 5;  
     Console.WriteLine(b);  
 }
-````
+```
 b değişkeninin tipi System.Int32 ve değeri 15 olur.Çünkü çalışma zamanında değişkenin değerini değiştirebiliyoruz;
 
 ## Partial Class
 Partial class bize bir class' ı birden fazla class olarak bölmemize, constructor, değişken, property, metodları vs. düzenli bir şekilde ayrı ayrı oluşturmamızı sağlamaktadır. Fiziksel olarak birden fazla parça ile oluşan partial class' lar, çalışma zamanında tek bir class olarak bütün elemanları içerisinde barındırmaktadır.
 
 Örnek olarak bir Emplooye sınıfı oluşturalım.
-```` c-sharp
+``` c-sharp
 public partial class Employee  
 {  
     public string Firstname { get; set; }  
@@ -194,10 +194,10 @@ public partial class Employee
         Lastname = lastname;  
     }  
 }
-````
+```
 Sadece property ve constructer'ı tanımladıktan sonra metodlarını ayrı bir dosyada yazalım.
 
-````c-sharp
+```c-sharp
 public partial class Employee  
 {  
     public string GetFullName()  
@@ -205,18 +205,18 @@ public partial class Employee
         return $"{Firstname} {Lastname}";  
     }  
 }
-````
+```
 
 Gördüğünüz gibi ayrı dosyalarda Employee sınıfını birleştirebiliyoruz.
 
-```` c-sharp
+``` c-sharp
 static void Main(string[] args)  
 {  
     Employee employee = new Employee("John", "Doe");  
     var fullName = employee.GetFullName();  
     Console.WriteLine(fullName);  
 }
-````
+```
 Büyük projelerde kodumuz okunması zor bir hale geldiğinde partial class'lara bölerek daha anlaşılır hale getirebilririz.
 
 
