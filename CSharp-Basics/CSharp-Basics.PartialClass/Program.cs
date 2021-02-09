@@ -9,6 +9,10 @@ namespace CSharp_Basics.PartialClass
             Employee employee = new Employee("John", "Doe");
             var fullName = employee.GetFullName();
             Console.WriteLine(fullName);
+
+            string x = "test";
+            x += "21";
+            Console.WriteLine(x);
         }
     }
 }
