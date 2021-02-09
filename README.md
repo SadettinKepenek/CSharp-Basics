@@ -37,7 +37,7 @@ Değer Tipleri stack bölgesinde tutulurken, Referans Tipleri heap bölgesinde t
 
 Bir metod içerisinde oluşturulan değişkenler ve metod parametreleri stack bellek bölgesinde oluşturulur ve metod sonlandığında bellekten silinirler.Bir metoda yolladığımız değer tipinde ki parametreler üzerinde ne kadar işlem yaparsak yapalım değerleri değişmez.Örnek verecek olursam:
 
-``` c-sharp
+```c-sharp
  static void Main(string[] args)  
     {  
         int toplam = 0;  
@@ -54,7 +54,7 @@ Bir metod içerisinde oluşturulan değişkenler ve metod parametreleri stack be
 
 Bu kodun çıktısı 0 olacaktır.Çünkü toplam değişkleni bir değer değişkenidir ve metoda parametre olarak sadece değeri gönderilir.
 
-``` c-sharp
+```c-sharp
 static void Main(string[] args)  
 {  
     int toplam = 0;  
@@ -167,7 +167,7 @@ Bu kodun çıktısı System.Int32 olur fakat hala derleyici a değişkeninin tip
 
 Bu gibi durumlarda değişkenin tipini çalışma zamanında atamak için **dynamic** tipini kullanırız.
 
-``` c-sharp
+```c-sharp
 static void Main(string[] args)  
 {  
     dynamic b = 10;  
@@ -182,7 +182,7 @@ b değişkeninin tipi System.Int32 ve değeri 15 olur.Çünkü çalışma zaman�
 Partial class bize bir class' ı birden fazla class olarak bölmemize, constructor, değişken, property, metodları vs. düzenli bir şekilde ayrı ayrı oluşturmamızı sağlamaktadır. Fiziksel olarak birden fazla parça ile oluşan partial class' lar, çalışma zamanında tek bir class olarak bütün elemanları içerisinde barındırmaktadır.
 
 Örnek olarak bir Emplooye sınıfı oluşturalım.
-``` c-sharp
+```c-sharp
 public partial class Employee  
 {  
     public string Firstname { get; set; }  
@@ -209,7 +209,7 @@ public partial class Employee
 
 Gördüğünüz gibi ayrı dosyalarda Employee sınıfını birleştirebiliyoruz.
 
-``` c-sharp
+```c-sharp
 static void Main(string[] args)  
 {  
     Employee employee = new Employee("John", "Doe");  
@@ -218,5 +218,3 @@ static void Main(string[] args)
 }
 ```
 Büyük projelerde kodumuz okunması zor bir hale geldiğinde partial class'lara bölerek daha anlaşılır hale getirebilririz.
-
-
