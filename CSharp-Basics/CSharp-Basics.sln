@@ -16,6 +16,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Partial-Classes", "Partial-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp-Basics.PartialClass", "CSharp-Basics.PartialClass\CSharp-Basics.PartialClass.csproj", "{3B56C95B-F1F8-466F-BC8B-DA8B10EF6064}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Indexer", "Indexer", "{0B6A0BA2-AAD5-4207-B933-7DCC18844D24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp-Basics.Indexer", "CSharp-Basics.Indexer\CSharp-Basics.Indexer.csproj", "{11C01F7A-5936-43C1-B544-82E83C642309}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,7 @@ Global
 		{8AA883B6-C1B6-43A4-96DC-2564E22C231E} = {C37A2020-95EE-491D-9516-3883D41D59DD}
 		{0546DF95-6619-4F5B-ABBB-19E7318143AC} = {4307D85D-29E3-4CC7-9EE8-FEF0F248E147}
 		{3B56C95B-F1F8-466F-BC8B-DA8B10EF6064} = {BA6AEA7C-1482-43D5-A9FB-8496781308B0}
+		{11C01F7A-5936-43C1-B544-82E83C642309} = {0B6A0BA2-AAD5-4207-B933-7DCC18844D24}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{969C5D0A-2E81-4896-B0DB-D61182DCC5E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,5 +49,9 @@ Global
 		{3B56C95B-F1F8-466F-BC8B-DA8B10EF6064}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B56C95B-F1F8-466F-BC8B-DA8B10EF6064}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B56C95B-F1F8-466F-BC8B-DA8B10EF6064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11C01F7A-5936-43C1-B544-82E83C642309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11C01F7A-5936-43C1-B544-82E83C642309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11C01F7A-5936-43C1-B544-82E83C642309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11C01F7A-5936-43C1-B544-82E83C642309}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
